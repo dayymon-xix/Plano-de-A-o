@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Ações Supervisão 2025</title>
+    <style>
+        body {
+            background-image: url(https://img.freepik.com/free-photo/woman-living-with-disability-answering-client-call-customer-service-wheelchair-user-with-physical-health-condition-working-helpline-support-helpdesk-operator-with-chronic-pain_482257-47208.jpg?t=st=1730321074~exp=1730324674~hmac=96990ebfe0c528d4bfc6babdbbb96a04733ecea1198f6d61dc82c12890ee261b&w=740
+            ); /* Verifique se o caminho da imagem está correto */
+            background-size: cover; /* ou use contain caso prefira outro ajuste */
+            background-repeat: no-repeat; /* Para evitar repetições */
+            background-attachment: fixed; /* Mantém o fundo fixo ao rolar a página */
+            background-position: center;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: "Arial Black", sans-serif;
+            flex-direction: column; /* Permite adicionar elementos acima dos slides */
+        }
+        .slide-container {
+            width: 80%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.8); /* Fundo translúcido */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 27px; /* Tamanho da fonte aumentado (de 12 para 27) */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Para garantir que os controles fiquem na parte inferior */
+            height: auto; /* Permite que a altura seja ajustada com base no conteúdo */
+        }
+        .slide {
+            display: none; /* Esconde todos os slides por padrão */
+            flex-direction: column;
+            justify-content: center; /* Centraliza verticalmente */
+            align-items: center; /* Centraliza horizontalmente */
+            text-align: center;
+            flex-grow: 1; /* Faz o slide ocupar o espaço disponível */
+        }
+        .slide.active {
+            display: flex; /* Exibe apenas o slide ativo */
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Alinha os botões verticalmente */
+            margin-top: 10px;
+        }
+        .rounded-button, .control-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            height: 30px; /* Altura ajustada para os botões */
+            margin: 0 5px; /* Espaçamento entre os botões */
+        }
+        .rounded-button {
+            align-self: center; /* Centraliza o botão de abrir documento */
+            width: auto; /* Ajusta a largura do botão automaticamente */
+        }
+        .control-button {
+            flex: 0 0 100px; /* Limita a largura dos botões de controle */
+        }
+        .rounded-button:hover, .control-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-size: 30px; color: white;">Plano de Ação</h1> <!-- Cor do título alterada para branco -->
+
+    <div class="slide-container">
+        <!-- Slide 1 -->
+        <div class="slide active" id="slide1">
+            <h2>ABSENTEÍSMO</h2>
+            <p>Equipes que têm bom relacionamento interpessoal tendem a ser mais produtivas e felizes em suas carreiras. Afinal, qual o resultado que uma equipe feliz pode entregar?</p>
+            <a href="https://drive.google.com/file/d/1xYfN8UXwsFsl-CFvTmbR3uVOs9Y9rx45/view" target="_blank" class="rounded-button">Iniciar</a>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" id="slide2">
+            <h2>QUALIDADE</h2>
+            <p>Essa apresentação demonstra como podemos melhorar o desempenho da equipe através de melhorias em cada etapa do nosso atendimento, utilizando técnicas e estratégias cordiais para com o atendimento como um todo. Vamos lá?   </p>
+            <a href="https://drive.google.com/file/d/1eRyBr2y7En1YVBMLJL5VSP3F0Tir0DK0/view" target="_blank" class="rounded-button">Vamos lá!</a>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" id="slide3">
+            <h2>PRÁTICA</h2>
+            <p>Finalmente, apresento meu Plano de Ação. Clique abaixo.</p>
+            <a href="https://drive.google.com/file/d/19_EpbBl3k-KYH-DX9NzG3aSuOI5qF-ua/view" target="_blank" class="rounded-button">Plano de Ação</a>
+        </div>
+        </div>
+
+        <!-- Controles do slide -->
+        <div class="controls">
+            <button onclick="changeSlide(-1)" class="control-button">Anterior</button>
+            <button onclick="changeSlide(1)" class="control-button">Próximo</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active'); // Esconde o slide atual
+            currentSlide = (currentSlide + direction + slides.length) % slides.length; // Calcula o novo índice do slide
+            slides[currentSlide].classList.add('active'); // Exibe o novo slide
+        }
+    </script>
+</body>
+</html>
